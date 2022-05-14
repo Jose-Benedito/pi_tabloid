@@ -33,3 +33,8 @@ def delete_note():
             db.session.delete(note)
             db.session.commit()
     return jsonify({})
+
+@views.route('/admin')
+@login_required
+def admin():
+    return render_template("admin.html", user=current_user)
