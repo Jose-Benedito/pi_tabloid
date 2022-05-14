@@ -1,0 +1,13 @@
+
+## Instruções básicas para usar o git e github ##
+
+(comandos via terminal)
+git clone [o endereço do projeto]
+git branch [nome da branch]
+git checkout [nome da branch]// para trabalhar com a branch
+git add .     //para salvar as alterações no git(local)
+git commit -m "[escrever o que foi acrescentado entre aspas]"
+git push origin [nome da branch] //envia para a branch
+git push origin main (ou master)// envia para o projeto original
+
+git pull // atualizar o projeto a partir do remoto
