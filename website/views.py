@@ -38,3 +38,7 @@ def delete_note():
 @login_required
 def admin():
     return render_template("admin.html", user=current_user)
+
+@views.route('/teste')
+def teste():
+    return render_template("teste.html", user=current_user)
