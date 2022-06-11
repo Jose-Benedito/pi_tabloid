@@ -8,12 +8,13 @@ h1{
 }
 .home{
     background-image: url("../image/fundohome.jpg");
-    background-size: auto;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
 }
 body{
     background-image: url("../image/fundo.jpg");
-    background-repeat: no-repeat;
+    background-size:contain;
+    background-repeat: repeat;
     
 }
 .card{
