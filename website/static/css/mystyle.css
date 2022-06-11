@@ -6,7 +6,11 @@ h1{
     width: 400px;
     height: 250px;
 }
-
+.home{
+    background-image: url("../image/fundohome.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+}
 body{
     background-image: url("../image/fundo.jpg");
     background-repeat: no-repeat;
