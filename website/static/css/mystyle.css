@@ -6,17 +6,27 @@ h1{
     width: 400px;
     height: 250px;
 }
-.home{
-    background-image: url("../image/fundohome.jpg");
-    background-size: contain;
-    background-repeat: repeat;
+/* Logo do site */
+.figure{
+   display: block;
+
+   margin-top: 200px;
+    height: 600px;
+    width: 1000px;
+    align-content: center;
+
 }
+.text-logo{
+    text-align: center;
+}
+/* fundo das páginas */
 body{
     background-image: url("../image/fundo.jpg");
     background-size:contain;
     background-repeat: repeat;
     
 }
+/* card dos produtos */
 .card{
     display: inline-block;
     height: 15rem;
