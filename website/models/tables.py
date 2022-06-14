@@ -69,7 +69,7 @@ class Itens(db.Model):
     qtd_maxima = db.Column(db.Boolean)
     valor = db.Column(db.Float)
     data_fim_promocao = db.Column(db.DateTime)
-    foto = db.Column(db.LargeBinary)
+    foto = db.Column(db.String(100))
 
     estabelecimento_id = db.Column(db.Integer, db.ForeignKey("estabelecimento.id"))
     estabelecimento = db.relationship('Estabelecimento', foreign_keys=estabelecimento_id)
