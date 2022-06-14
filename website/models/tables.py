@@ -67,8 +67,9 @@ class Itens(db.Model):
     volume_tipo = db.Column(db.String(100))
     volume = db.Column(db.String(100))
     qtd_maxima = db.Column(db.Boolean)
+    valor = db.Column(db.Float)
     data_fim_promocao = db.Column(db.DateTime)
-    foto = db.Column(db.LargeBinary)
+    foto = db.Column(db.String(100))
 
     estabelecimento_id = db.Column(db.Integer, db.ForeignKey("estabelecimento.id"))
     estabelecimento = db.relationship('Estabelecimento', foreign_keys=estabelecimento_id)
