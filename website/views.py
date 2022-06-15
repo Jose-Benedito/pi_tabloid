@@ -42,3 +42,11 @@ def admin():
 @views.route('/teste')
 def teste():
     return render_template("teste.html", user=current_user)
+
+@views.route ( '/mercadob' )
+def  mercadob ():
+    return  render_template ( "mercadob.html" , user = current_user )
+
+@views.route( '/mercadoc' )
+def  mercado ():
+    return  render_template ( "mercadoc.html" , user = current_user )
