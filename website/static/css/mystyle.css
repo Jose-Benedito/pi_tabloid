@@ -44,10 +44,13 @@ body{
     font-weight: 600;
 
 }
+
+/*  Bloco de Informações dos Mercados */
 .contato-card{
     width: 100%;
     margin-top: 30px;
     background: #ffde59;
+    height: auto;
 }
 .contato {
     margin-left: 10px;
@@ -77,4 +80,25 @@ ul li{
     width: 40px;
     height: 40px;
     margin-right: 5px;
+}
+.endereco-map, .redes, .endereco{
+
+    display: inline-block;
+    margin-right: 20px;
+ 
+}
+.endereco-map li{
+    line-height: 42px;
+}
+.endereco li{
+    line-height: 42px;
+    font-weight: 600;
+}
+.maps{
+    display: inline-block; 
+    margin: 30px;  
+    
+}
+.maps img{
+    width: 100%;
 }
