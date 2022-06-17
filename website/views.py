@@ -5,6 +5,16 @@ from .models import Note
 from . import db
 import json
 
+import os
+
+"""
+    Como o arquivo estará em binario será necessário essa lib para salvar
+"""
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = os.path.join(os.getcwd(), 'upload')
+
+
 
 views = Blueprint('views', __name__)
 
@@ -50,3 +60,15 @@ def  mercadob ():
 @views.route( '/mercadoc' )
 def  mercado ():
     return  render_template ( "mercadoc.html" , user = current_user )
+
+@views.route( '/upload' )
+def  upload ():
+    return  render_template ( "upload.html" , user = current_user )
+
+
+@views.route('/upload', methods=['POST'])
+def upload():
+    file = request.files['imagem']
+    savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
+    file.save(savePath)
+    return 'Upload Efetuado Com Sucesso'
