@@ -50,3 +50,7 @@ def  mercadob ():
 @views.route( '/mercadoc' )
 def  mercado ():
     return  render_template ( "mercadoc.html" , user = current_user )
+
+@views.route( '/upload' )
+def  upload ():
+    return  render_template ( "upload.html" , user = current_user )

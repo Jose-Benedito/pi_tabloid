@@ -6,6 +6,14 @@ from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user 
 
+import os
+
+"""
+    Como o arquivo estará em binario será necessário essa lib para salvar
+"""
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = os.path.join(os.getcwd(), 'upload')
 
 
 auth = Blueprint('auth', __name__)
@@ -70,3 +78,12 @@ def sign_up():
 
 
     return render_template('sign_up.html', user=current_user)
+
+
+
+@auth.route('/upload', methods=['POST'])
+def upload():
+    file = request.files['imagem']
+    savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
+    file.save(savePath)
+    return 'Upload Efetuado Com Sucesso'
