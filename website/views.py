@@ -49,9 +49,9 @@ def delete_note():
 def admin():
     return render_template("admin.html", user=current_user)
 
-@views.route('/teste')
+@views.route('/cadastro')
 def teste():
-    return render_template("teste.html", user=current_user)
+    return render_template("cadastro.html", user=current_user)
 
 
 

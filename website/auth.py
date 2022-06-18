@@ -61,12 +61,12 @@ def sign_up():
             flash('Senhas não correspondentes', category='error')
         else:
             # add user to database
-            new_user = User(email=email, nome=nome, password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email=email, password=generate_password_hash(password1, nome=nome, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             login_user(user, remember=True)
             flash('conta criado com sucesso!', category='success')
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.cadastro'))
 
 
 
