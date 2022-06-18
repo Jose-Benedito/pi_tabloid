@@ -2,7 +2,7 @@
 /* Logo do site */
 .figure {
    display: block;
-   margin-top: 300px;
+   margin-top: 100px;
    height: 90%;
    width: 100%;
    align-content: center;
@@ -36,3 +36,21 @@ body{
     height: 120px;
 }
 
+form h3{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-control {
+    width: 400px;
+       
+}
+form{
+    -ms-flex-align: center;
+}
+
+.rodape{
+    background-color: #333;
+    height:200px;
+    margin-top: 150px;
+}

@@ -38,7 +38,7 @@ def logout():
     return redirect(url_for('auth.login'))
 
 
-@auth.route('/sign-up', methods=['GET', 'POST'])
+@auth.route('/cadastro', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -69,4 +69,4 @@ def sign_up():
 
 
 
-    return render_template('sign_up.html', user=current_user)
+    return render_template('cadastro.html', user=current_user)
