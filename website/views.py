@@ -39,7 +39,7 @@ def delete_note():
 def admin():
     return render_template("admin.html", user=current_user)
 
-@views.route(' /mercadoa' )
+@views.route('/mercadoa' )
 def mercadoa ():
     return render_template("mercadoa.html", user=current_user)
 

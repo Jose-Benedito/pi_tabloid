@@ -72,13 +72,15 @@
         {% endfor %}
     {% endif %}
  {% endwith %}
-  <div class="container">     
- <figure class="figure">
-    <img src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-    <h3 class="text-logo">tabloidedigital.com</h3>
-
-  </figure>
+  <div class="row">   
+    <div class="col-md-10 col-sm-8">
+        <figure>
+            <img class="figure" src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            <h1 class="text-logo">tabloidedigital.com.br</h1>
+        </figure>
     
+
+</div>
 </div>
 
 
