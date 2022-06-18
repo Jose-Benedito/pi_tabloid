@@ -51,6 +51,11 @@ body{
     margin-top: 30px;
     background: #ffde59;
     height: auto;
+    display: flex;
+}
+.contato-body{
+    display: flex;
+    align-items:flex-start;
 }
 .contato {
     margin-left: 10px;
@@ -84,7 +89,7 @@ ul li{
 .endereco-map, .redes, .endereco{
 
     display: inline-block;
-    margin-right: 20px;
+    margin-left: 50px;
  
 }
 .endereco-map li{
@@ -96,9 +101,7 @@ ul li{
 }
 .maps{
     display: inline-block; 
-    margin: 30px;  
+     margin-left: 60px; 
     
 }
-.maps img{
-    width: 100%;
-}
+
