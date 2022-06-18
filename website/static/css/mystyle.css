@@ -9,17 +9,17 @@ h1{
 /* Logo do site */
 .figure{
    display: block;
-
-   margin-top: 200px;
-    height: 600px;
-    width: 1000px;
-    align-content: center;
-
+   margin-top: 300px;
+   height: 600px;
+   width: 1000px;
+   align-content: center;
+    
 }
-.text-logo{
-    text-align: center;
+.text-logo {
+    text-align: right;
+    
 }
-/* fundo das páginas */
+    /* fundo das páginas */
 body{
     background-image: url("../image/fundo.jpg");
     background-size:contain;

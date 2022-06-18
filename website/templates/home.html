@@ -29,18 +29,19 @@
             {% if user.is_authenticated %}
             <a class="nav-item nav-link" id="admin" href="/">Administrativo</a>
             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-        
+            
+            
             {% else %}
             <a class="nav-item nav-link" id="home" href="/">Home</a>
             <a class="nav-item nav-link" id="login" href="/login">Login</a>
             <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign-Up</a>
-            <a class="nav-item nav-link" id="teste" href="/teste">página teste</a>
+            
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   MERCADOS
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/teste">Mercado A</a>
+                  <a class="dropdown-item" href="/mercadoa">Mercado A</a>
                   <a class="dropdown-item" href="/mercadob">Mercado B</a>
                   <a class="dropdown-item" href="/mercadoc">Mercado C</a>
                 </div>
@@ -73,11 +74,11 @@
  {% endwith %}
   <div class="container">     
  <figure class="figure">
-    <img src="{{ url_for('static', filename='image/logo.jpg')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-    
-  </figure>
-    <h2 class="text-logo">tabloidedigital.com</h2>
+    <img src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    <h3 class="text-logo">tabloidedigital.com</h3>
 
+  </figure>
+    
 </div>
 
 

@@ -39,14 +39,14 @@ def delete_note():
 def admin():
     return render_template("admin.html", user=current_user)
 
-@views.route('/teste')
-def teste():
-    return render_template("teste.html", user=current_user)
+@views.route(' /mercadoa' )
+def mercadoa ():
+    return render_template("mercadoa.html", user=current_user)
 
 @views.route ( '/mercadob' )
 def  mercadob ():
-    return  render_template ( "mercadob.html" , user = current_user )
+     return  render_template ( "mercadob.html" , user = current_user )
 
 @views.route( '/mercadoc' )
-def  mercado ():
+def  mercadoc ():
     return  render_template ( "mercadoc.html" , user = current_user )
