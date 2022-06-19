@@ -15,8 +15,6 @@ from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), 'upload')
 
-
-
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
@@ -55,9 +53,6 @@ def admin():
 def teste():
     return render_template("cadastro.html", user=current_user)
 
-
-
-
 #Googlemaps
 class Comercio:
     def __init__(self, key, name, lat, lng):
@@ -92,9 +87,6 @@ def show_comercio(comercio_code):
     else:
         abort(404)
 
-
-
-
 @views.route('/upload', methods=['POST'])
 def upload():
     if request.method == 'POST': 
@@ -109,5 +101,6 @@ def mercadoa ():
     return render_template("mercadoa.html", user=current_user)
 
 
-
-
+@views.route('/form', methods=['GET', 'POST'])
+def form():
+    return render_template('form.html', user=current_user)
