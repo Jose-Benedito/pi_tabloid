@@ -50,6 +50,7 @@ def delete_note():
 def admin():
     return render_template("admin.html", user=current_user)
 
+<<<<<<< HEAD
 @views.route('/cadastro')
 def teste():
     return render_template("cadastro.html", user=current_user)
@@ -102,3 +103,16 @@ def upload():
         file.save(savePath)
         flash('Upload Efetuado Com Sucesso', category='success')
     return render_template ( "upload.html" , user = current_user )
+=======
+@views.route('/mercadoa' ) #endpoints
+def mercadoa ():
+    return render_template("mercadoa.html", user=current_user)
+
+@views.route ( '/mercadob' )
+def  mercadob ():
+     return  render_template ( "mercadob.html" , user = current_user )
+
+@views.route( '/mercadoc' )
+def  mercadoc ():
+    return  render_template ( "mercadoc.html" , user = current_user )
+>>>>>>> dc36b02b0130faad1a1422a4ca9e7658b4ce0dc8
