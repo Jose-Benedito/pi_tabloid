@@ -48,10 +48,13 @@ def delete_note():
 def admin():
     return render_template("admin.html", user=current_user)
 
-
 @views.route('/cadastro')
 def teste():
     return render_template("cadastro.html", user=current_user)
+
+@views.route('/form', methods=['GET', 'POST'])
+def form():
+    return render_template('form.html', user=current_user)
 
 #Googlemaps
 class Comercio:
@@ -99,8 +102,3 @@ def upload():
 @views.route('/mercadoa' ) #endpoints
 def mercadoa ():
     return render_template("mercadoa.html", user=current_user)
-
-
-@views.route('/form', methods=['GET', 'POST'])
-def form():
-    return render_template('form.html', user=current_user)
