@@ -70,11 +70,5 @@ def sign_up():
 
 
 
-    return render_template('sign_up.html', user=current_user)
 
-
-
-<<<<<<< HEAD
-=======
     return render_template('cadastro.html', user=current_user)
->>>>>>> dc36b02b0130faad1a1422a4ca9e7658b4ce0dc8

@@ -13,11 +13,10 @@ class Note(db.Model):
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(150))
-<<<<<<< HEAD
-    nome = db.Column(db.String(150))
-    password = db.Column(db.String(150))
-=======
-    password = db.Column(db.String(150))
     nome_mercado = db.Column(db.String(150))
->>>>>>> dc36b02b0130faad1a1422a4ca9e7658b4ce0dc8
+
+    password = db.Column(db.String(150))
+
+    password = db.Column(db.String(150))
+
     
