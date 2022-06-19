@@ -126,6 +126,7 @@ form h3{
 }
 form{
     -ms-flex-align: center;
+    margin-bottom: 200px;
 }
 
 .rodape{
