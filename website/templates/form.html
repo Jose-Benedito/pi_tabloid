@@ -9,7 +9,7 @@
     <div class="dropdown show">
         <label for="tipo_item">Tipo do produto:</label>
       
-        <select class="form-select" name="tipo_prod" aria-label="Default select example">
+        <select class="form-select" name="tipo_item" aria-label="Default select example">
             <option selected>Selecione o tipo do produto</option>
             <option value="1">Açougue</option>
             <option value="2">Frios e laticínios</option>
@@ -55,20 +55,18 @@
     </div>
 
    
-
+   
     <div class="form-group">
         <label for="data-final-promo">Arquivo:</label>
-        <input id="file" type="file" class="form-control" id="foto" name="foto">  
-
+        <input id="foto" type="file" class="form-control"  name="foto">  
+    </div>
+    
+    <div class="form-group">
         <label for="data_fim_promocao">Data final da promoção:</label>
-        <input id="data_fim_promocao" type="data_fim_promocao" class="form-control" id="data_fim_promocao">  
+        <input id="data_fim_promocao" type="data_fim_promocao" class="form-control" name="data_fim_promocao">  
     </div>
 
- 
 
-    </div>
-
-    <br/>
     <button type="submit" class="btn btn-primary">Cadastrar produto</button>
 </form>
 {% endblock %}

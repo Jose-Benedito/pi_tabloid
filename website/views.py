@@ -1,7 +1,8 @@
 from unicodedata import category
-from flask import Blueprint, render_template, request, flash, jsonify, abort
+from flask import Blueprint, render_template, request, redirect, flash, jsonify, url_for, abort
 from flask_login import login_required, current_user 
 from .models import Note
+from .models import Items
 
 from . import db
 import json
@@ -54,17 +55,39 @@ def teste():
 
 @views.route('/form', methods=['GET', 'POST'])
 def form():
-    if request.method == 'Post':
-        item = request.form.get('item')
-        tipo_prod = request.form.get('tipo_prod')
-        marca = request.form.get('marca')
-        quatde = request.form.get('quantidade')
+    if request.method == 'POST':
+        tipo_item = request.form.get('tipo_item')
+        nome_item = request.form.get('nome_item')
+        marca = request.form.get('marca_item')
+        volume_tipo =request.form.get('volume_tipo')
+        volume = request.form.get('volume')
+        qtd_maxima = request.form.get('qtd_maxima')
         valor = request.form.get('valor')
-        data_final = request.form.get('data_final')
+    
         file = request.files['foto']
+        namefoto = file.filename
+        
+
         savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
         file.save(savePath)
 
+        data_fim_promocao = request.form.get('data_fim_promocao')
+
+        #Items = Items.query.filter_by(tipo_item=tipo_item).first()
+
+        new_item = Items(tipo_item= tipo_item, nome_item=nome_item, 
+        marca_item=marca, volume_tipo = volume_tipo,
+        volume= volume,  qtd_maxima=qtd_maxima, valor=valor,foto=namefoto,
+        data_fim_promocao=data_fim_promocao
+        )
+
+
+        db.session.add(new_item)
+        db.session.commit()
+        flash('Produto salvo com sucesso', category='success')
+        return redirect(url_for('views.home'))
+    else:
+        flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', user=current_user)
 
 #Googlemaps

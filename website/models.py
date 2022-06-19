@@ -48,7 +48,7 @@ class Items(db.Model, UserMixin):
     qtd_maxima = db.Column(db.String(150))
     valor = db.Column(db.String(150))
     data_fim_promocao = db.Column(db.String(150))
-    foto = db.Column(db.String(150))
+    foto = db.Column(db.Text, nullable =False)
 
 class redes_sociais(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
