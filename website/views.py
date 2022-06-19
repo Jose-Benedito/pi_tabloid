@@ -54,6 +54,17 @@ def teste():
 
 @views.route('/form', methods=['GET', 'POST'])
 def form():
+    if request.method == 'Post':
+        item = request.form.get('item')
+        tipo_prod = request.form.get('tipo_prod')
+        marca = request.form.get('marca')
+        quatde = request.form.get('quantidade')
+        valor = request.form.get('valor')
+        data_final = request.form.get('data_final')
+        file = request.files['foto']
+        savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
+        file.save(savePath)
+
     return render_template('form.html', user=current_user)
 
 #Googlemaps

@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Esta é a página de cadastro de produtos</h1>
 
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
     <h3 align="Center">Formulário</h3>
     <div class="form-group">
       <label for="item">Nome do produto:</label>
@@ -13,7 +13,7 @@
     <div class="dropdown show">
         <label for="item">Tipo do produto:</label>
       
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" name="tipo_prod" aria-label="Default select example">
             <option selected>Selecione o tipo do produto</option>
             <option value="1">Açougue</option>
             <option value="2">Frios e laticínios</option>
@@ -45,12 +45,12 @@
 
     <div class="form-group">
         <label for="data-final-promo">Data final da promoção:</label>
-        <input id="date" type="date" class="form-control" id="data-final-promo">  
+        <input id="date" type="date" class="form-control" id="data-final-promo" name="data_final">  
     </div>
 
     <div class="form-group">
         <label for="data-final-promo">Arquivo:</label>
-        <input id="file" type="file" class="form-control" id="data-final-promo">  
+        <input id="file" type="file" class="form-control" id="foto" name="foto">  
     </div>
 
     <br/>
