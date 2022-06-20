@@ -50,6 +50,7 @@ def delete_note():
 def admin():
     return render_template("admin.html", user=current_user)
 
+
 @views.route('/cadastro')
 def teste():
     return render_template("cadastro.html", user=current_user)
@@ -72,6 +73,11 @@ comercios = (
     Comercio('mercadoC',     'Mercadinho C', -23.588869063417768, -46.40864850869)
 )
 comercios_by_key = {comercio.key: comercio for comercio in comercios}
+
+ #endpoints dos mercados
+@views.route('/mercadoa' )
+def mercadoa ():
+    return render_template("mercadoa.html", user=current_user)
 
 
 @views.route ( '/mercadob' )
@@ -102,3 +108,5 @@ def upload():
         file.save(savePath)
         flash('Upload Efetuado Com Sucesso', category='success')
     return render_template ( "upload.html" , user = current_user )
+
+
