@@ -7,6 +7,7 @@
     <h3 align="Center">Formulário</h3>
     
     <div class="dropdown show">
+        <div class="col-md-6 offset-md-3">
         <label for="tipo_item">Tipo do produto:</label>
       
         <select class="form-select" name="tipo_item" aria-label="Default select example">
@@ -23,50 +24,72 @@
 
           </select>
       </div>
-
+    </div>
     <div class="form-group">
+        <div class="col-md-6 offset-md-3">
       <label for="nome_item">Nome do produto:</label>
       <input type="nome_item" class="form-control" id="nome_item" name="nome_item" placeholder="escreva o nome do produto">  
+        </div>
     </div>
     
     <div class="form-group">
-        <label for="marca_item">Marca:</label>
-        <input type="marca_item" class="form-control" id="marca_item" name="marca_item" placeholder="escreva o nome da marca">  
+        <div class="col-md-6 offset-md-3">
+            <label for="marca_item">Marca:</label>
+            <input type="marca_item" class="form-control" id="marca_item" name="marca_item" placeholder="escreva o nome da marca">  
+
+        </div>
     </div>
     
     <div class="form-group">
-        <label for="volume_tipo">Tipo da quantidade:</label>
-        <input type="volume_tipo" class="form-control" id="volume_tipo" name="volume_tipo" placeholder="escreva a quantidade">  
+        <div class="col-md-6 offset-md-3">
+            <label for="volume_tipo">Tipo da quantidade:</label>
+            <input type="volume_tipo" class="form-control" id="volume_tipo" name="volume_tipo" placeholder="escreva a quantidade">  
+
+        </div>
     </div>
 
     <div class="form-group">
+        <div class="col-md-6 offset-md-3">
         <label for="volume">Quantidade:</label>
         <input type="volume" class="form-control" id="volume" name="volume" placeholder="escreva a quantidade">  
+        </div>
     </div>
 
     <div class="form-group">
+        <div class="col-md-6 offset-md-3">
         <label for="qtd_maxima">Quantidade máxima:</label>
         <input type="qtd_maxima" class="form-control" id="qtd_maxima" name="qtd_maxima" placeholder="escreva a quantidade">  
+        </div>
     </div>
 
     <div class="form-group">
-        <label for="valor">Valor:</label>
-        <input type="valor" class="form-control" id="valor" name="valor" placeholder="escreva o valor do produto">  
+        <div class="col-md-6 offset-md-3">
+            <label for="valor">Valor:</label>
+            <input type="valor" class="form-control" id="valor" name="valor" placeholder="escreva o valor do produto">  
+
+        </div>
     </div>
 
    
    
     <div class="form-group">
-        <label for="data-final-promo">Arquivo:</label>
-        <input id="foto" type="file" class="form-control"  name="foto">  
-    </div>
+        <div class="col-md-6 offset-md-3">
+
+            <label for="data-final-promo">Arquivo:</label>
+            <input id="foto" type="file" class="form-control"  name="foto">  
+        </div>
+        </div>
     
     <div class="form-group">
-        <label for="data_fim_promocao">Data final da promoção:</label>
-        <input id="data_fim_promocao" type="data_fim_promocao" class="form-control" name="data_fim_promocao">  
+        <div class="col-md-6 offset-md-3">
+            <label for="data_fim_promocao">Data final da promoção:</label>
+            <input id="data_fim_promocao" type="data_fim_promocao" class="form-control" name="data_fim_promocao">  
+        </div>
     </div>
 
+    <div class="col-md-6 offset-md-3">
 
-    <button type="submit" class="btn btn-primary">Cadastrar produto</button>
+        <button type="submit" class="btn btn-primary">Cadastrar produto</button>
+    </div>
 </form>
 {% endblock %}

@@ -73,11 +73,46 @@
         {% endfor %}
     {% endif %}
 {% endwith %}
-<div class="container">
+
+
+
 <!--Conteúdo das páginas -->
     {% block content %}
     {% endblock %}
-
+    <div class=" rodape"> 
+        <div class="rede-social ">
+            <ul>
+                <h6><ol>Institucional</ol></h6>
+                <ol>Sobre tabloide</ol>
+                <ol>Mapa do site</ol>
+                <ol>Politica de privacidade</ol>
+            </ul>
+        </div>
+        <div class="rede-social">
+            <ul>  
+                 <h6><ol>Atendimento ao cliente</ol></h6>
+                 <ol>Oferta dia</ol>
+                 <ol>Promoções semanais</ol>
+                 <ol>Como comprar</ol>
+                
+            </ul>       
+        </div>
+        <div class="rede-social">  
+            <ul>  
+                 <h6><ol>Siga o tabloide</ol></h6>
+            </ul>     
+        </div> 
+        <div class="rede-social">    
+            <ul>  
+                <h4<ol>Acessibilidade</ol></h4>
+                
+                <img  src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="A generic square placeholder image with rounded corners in a figure." >
+            
+            </ul>  
+        </div> 
+    </div>
+    
+    
 </div>
 
 

@@ -73,7 +73,7 @@ def form():
 
         data_fim_promocao = request.form.get('data_fim_promocao')
 
-        #Items = Items.query.filter_by(tipo_item=tipo_item).first()
+        # Criar as validações dos inputs aqui
 
         new_item = Items(tipo_item= tipo_item, nome_item=nome_item, 
         marca_item=marca, volume_tipo = volume_tipo,
