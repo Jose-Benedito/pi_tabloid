@@ -5,7 +5,22 @@
     margin-left: auto;
     height: 100%;
     width: 100%;
-    
+   display: block;
+   margin-top: 150px;
+   padding: 20px;
+    height: 100%;
+    width: 100%;
+
+}
+.text-logo{
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-weight: 900;
+   margin-top: 100px;
+   height: 90%;
+   width: 100%;
+   align-content: center;
+
     
 }
 .figure-etiqueta{
@@ -17,6 +32,7 @@
   
 }
 
+
 .figure-etiqueta2{
     height: 30%;
     width: 50%;
@@ -25,7 +41,12 @@
   
  #ladoalado{
     display: flex; /* coloca as imagens uma ao lado da outra */
-    justify-content: center; /* alinha as imagens no centro da tela */
+    justify-content: center; /* alinha as imagens no centro da tela *
+
+.text-logo {
+    text-align: right;
+    
+   
 }
  /* fundo das páginas */
 body{
@@ -58,15 +79,84 @@ body{
 /* card dos produtos */
 .card{
     display: inline-block;
-    height: 15rem;
+    align-items: justify;
+    width: 13rem;
+    height: 20rem;
+    border-bottom: 2px solid #333;
+    
     border-bottom: 2px solid rgb#333;
     padding: 5px;
     margin: 5px;
 }
-.card img{
-    width: 12rem;
-    height: 120px;
+
+.card-text{
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+
+
 }
+
+/*  Bloco de Informações dos Mercados */
+.contato-card{
+    width: 100%;
+    margin-top: 30px;
+    background: #ffde59;
+    height: auto;
+    display: flex;
+}
+.contato-body{
+    display: flex;
+    align-items:flex-start;
+}
+.contato {
+    margin-left: 10px;
+    color: #4d4d4c;
+}
+.validade{
+    font-size: small;
+}
+.card h3{
+    font-family: 'Fredoka One', cursive;
+    font-weight: 1000;
+    color: crimson;
+    font-size:40px;
+}
+.card-img-top{
+    width: 12rem;
+    height: 150px;
+    
+}
+
+/* Icones- redes sociais */
+ul li{
+    list-style: none;
+    color: #4d4d4c;
+}
+ ul li img{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.endereco-map, .redes, .endereco{
+
+    display: inline-block;
+    margin-left: 50px;
+ 
+}
+.endereco-map li{
+    line-height: 42px;
+}
+.endereco li{
+    line-height: 42px;
+    font-weight: 600;
+}
+.maps{
+    display: inline-block; 
+     margin-left: 60px; 
+    
+}
+
 
 form h3{
     text-align: center;
@@ -79,9 +169,11 @@ form h3{
 }
 form{
     -ms-flex-align: center;
+    margin-bottom: 200px;
 }
 
 .rodape{
+
     background-color:#333;
     height:110px;
     margin-top:100px;
@@ -108,4 +200,8 @@ h4{
     display: block;
     margin-right: auto;
     margin-left: auto;
+
+    background-color: #333;
+    height:200px;
+    margin-top: 150px;
 }

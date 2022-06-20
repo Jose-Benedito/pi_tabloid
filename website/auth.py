@@ -8,6 +8,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 
 
+
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login',  methods=['GET', 'POST'])
@@ -42,7 +43,7 @@ def logout():
 def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
-        nome = request.form.get('nome')
+        nome_mercado = request.form.get('nome_mercado')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
@@ -52,7 +53,7 @@ def sign_up():
             flash('Email deve ser informado', category='error')
         if len(email)< 4:
             flash('email deve ter mais de 4 caracteres', category='error')
-        elif len(nome) < 2:
+        elif len(nome_mercado) < 2:
             flash(' nome deve ter mais de um caractere', category='error')
         elif len(password1) < 6:
             flash(' Senha deve ter mais de 6 caractere', category='error')
@@ -60,13 +61,14 @@ def sign_up():
             flash('Senhas não correspondentes', category='error')
         else:
             # add user to database
-            new_user = User(email=email, nome=nome, password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email=email, nome_mercado=nome_mercado, password=generate_password_hash(password1,  method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            #login_user(user, remember=True)
             flash('conta criado com sucesso!', category='success')
             return redirect(url_for('views.home'))
 
 
 
-    return render_template('cadastro.html', user=current_user)
+
+    return render_template('cadastro.html')
