@@ -14,7 +14,9 @@ import os
 """
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = os.path.join(os.getcwd(), 'upload')
+UPLOAD = 'website/static/uploads'
+
+UPLOAD_FOLDER = os.path.join(os.getcwd(), UPLOAD)
 
 views = Blueprint('views', __name__)
 
@@ -135,4 +137,5 @@ def upload():
 
 @views.route('/mercadoa' ) #endpoints
 def mercadoa ():
-    return render_template("mercadoa.html", user=current_user)
+    dados_items = Items.query.all()
+    return render_template("mercadoa.html", ofertas = dados_items, user=current_user)
