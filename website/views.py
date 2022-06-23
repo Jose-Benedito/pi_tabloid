@@ -109,6 +109,11 @@ comercios = (
 comercios_by_key = {comercio.key: comercio for comercio in comercios}
 
 
+@views.route('/mercadoa' ) #endpoints
+def mercadoa ():
+    dados_items = Items.query.all()
+    return render_template("mercadoa.html", ofertas=dados_items, comercios=comercios, user=current_user)
+
 @views.route ( '/mercadob' )
 def  mercadob ():
     return  render_template ( "mercadob.html" ,comercios=comercios,  user = current_user  )
@@ -135,7 +140,3 @@ def upload():
         flash('Upload Efetuado Com Sucesso', category='success')
     return render_template ( "upload.html" , user = current_user )
 
-@views.route('/mercadoa' ) #endpoints
-def mercadoa ():
-    dados_items = Items.query.all()
-    return render_template("mercadoa.html", ofertas = dados_items, user=current_user)
