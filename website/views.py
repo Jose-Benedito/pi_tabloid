@@ -88,8 +88,8 @@ def form():
         db.session.commit()
         flash('Produto salvo com sucesso', category='success')
         return redirect(url_for('views.home'))
-    else:
-        flash('Erro ao salvar o produto', category='error')
+    #else:
+        #flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', user=current_user)
 
 #Googlemaps
