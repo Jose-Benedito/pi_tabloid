@@ -40,12 +40,22 @@
             {% if user.is_authenticated %}
             <a class="nav-item nav-link" id="admin" href="/">Administrativo</a>
             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            <a class="nav-item nav-link" id="form" href="/form">Formulário</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Mercados
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/mercadoa">Mercado A</a>
+                  <a class="dropdown-item" href="/mercadob">Mercado B</a>
+                  <a class="dropdown-item" href="/mercadoc">Mercado C</a>
+                </div>
+                </div>
             
             {% else %}
             <a class="nav-item nav-link" id="home" href="/">Home</a>
             <a class="nav-item nav-link" id="login" href="/login">Login</a>
             <a class="nav-item nav-link" id="signUp" href="/cadastro">Cadastra-se</a>
-            <a class="nav-item nav-link" id="form" href="/form">Formulário</a>
        
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,7 +117,8 @@
             <ol>Mapa do site</ol>
             <ol>Politica de privacidade</ol>
         </ul>
-       
+    </div>
+    <div class="rede-social">
         <ul>  
              <h6><ol>Atendimento ao cliente</ol></h6>
              <ol>Oferta dia</ol>
@@ -115,19 +126,19 @@
              <ol>Como comprar</ol>
             
         </ul>       
-        
+    </div>
+    <div class="rede-social">  
         <ul>  
              <h6><ol>Siga o tabloide</ol></h6>
         </ul>     
-        
+    </div> 
+    <div class="rede-social">    
         <ul>  
             <h4<ol>Acessibilidade</ol></h4>
-            <div></div>
-            <img class="figure-acessibilidade" src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width="60" height="60">
-        </div>
+            
+            <img  src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="A generic square placeholder image with rounded corners in a figure." >
+        
         </ul>  
-
-    
     </div> 
 </div>
 

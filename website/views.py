@@ -14,7 +14,9 @@ import os
 """
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = os.path.join(os.getcwd(), 'upload')
+UPLOAD = 'website/static/uploads'
+
+UPLOAD_FOLDER = os.path.join(os.getcwd(), UPLOAD)
 
 views = Blueprint('views', __name__)
 
@@ -73,7 +75,7 @@ def form():
 
         data_fim_promocao = request.form.get('data_fim_promocao')
 
-        #Items = Items.query.filter_by(tipo_item=tipo_item).first()
+        # Criar as validações dos inputs aqui
 
         new_item = Items(tipo_item= tipo_item, nome_item=nome_item, 
         marca_item=marca, volume_tipo = volume_tipo,
@@ -86,8 +88,8 @@ def form():
         db.session.commit()
         flash('Produto salvo com sucesso', category='success')
         return redirect(url_for('views.home'))
-    else:
-        flash('Erro ao salvar o produto', category='error')
+    #else:
+        #flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', user=current_user)
 
 #Googlemaps
@@ -106,6 +108,11 @@ comercios = (
 )
 comercios_by_key = {comercio.key: comercio for comercio in comercios}
 
+
+@views.route('/mercadoa' ) #endpoints
+def mercadoa ():
+    dados_items = Items.query.all()
+    return render_template("mercadoa.html", ofertas=dados_items, comercios=comercios, user=current_user)
 
 @views.route ( '/mercadob' )
 def  mercadob ():
@@ -133,6 +140,3 @@ def upload():
         flash('Upload Efetuado Com Sucesso', category='success')
     return render_template ( "upload.html" , user = current_user )
 
-@views.route('/mercadoa' ) #endpoints
-def mercadoa ():
-    return render_template("mercadoa.html", user=current_user)

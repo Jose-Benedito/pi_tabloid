@@ -111,12 +111,12 @@
             </div>
         </div>
 
-
+    <!-- Barra contatos e googlemaps-->
         <div class="card  contato-card">
             <div class="card-body contato-body">
            
             
-              <div class="redes">
+              <div class="endereco">
                 
                 <ul >
                     <li><img src="{{ url_for('static', filename='image/whats.png')}}" alt="ícone do whatssap"><strong>(11)92222-4444</strong></li>
@@ -132,7 +132,7 @@
                       <li>Av Dos Metalúrgicos</li>
                   </ul>
               </div>
-              <div class="endereco-map">
+              <div class="endereco">
              
                 <ul >
                     {% for comercio in comercios %}
@@ -140,13 +140,16 @@
                     {% endfor %}
                 </ul>
               </div>
-              <div class="maps">
+              <div class="endereco">
                 <img class="maps-img" src="{{ url_for('static', filename='image/googlemaps.png')}}" alt="ícone do whatssap">
               </div>
+              
             </div>
       
-    </div>
+        </div>
+    <!-- Barra contatos e googlemaps-->
 
+    </div>
 </div>
 
 {% endblock %}
