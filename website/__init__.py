@@ -6,9 +6,9 @@ from flask_sqlalchemy import SQLAlchemy
 # iniciando o banco de dados
 db = SQLAlchemy()
 
-DB_NAME = "database.db"
-
-
+DB_NAME = "database.db" # para o sqlite
+DB_POSTGRES = "tabloid"
+PASSWORD = 'jsbach'
 
 def create_app():
     app = Flask(__name__)
@@ -16,7 +16,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'grhteyeuwhhs fgdhjajakuww'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
  #Postgres
-    app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:jsbach@localhost/tabloid'
+    app.config['SQLALCHEMY_DATABASE_URI']=f'postgresql://postgres:{PASSWORD}@localhost/{DB_POSTGRES}'
     db.init_app(app)
 
 
