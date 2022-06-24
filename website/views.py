@@ -4,6 +4,7 @@ from flask_login import login_required, current_user
 from .models import Note
 from .models import Items
 
+
 from . import db
 import json
 
@@ -23,6 +24,7 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 #@login_required
 def home():
+    
     if request.method == 'POST':
         note = request.form.get('note')
 

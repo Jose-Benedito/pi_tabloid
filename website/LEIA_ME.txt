@@ -6,6 +6,9 @@
 
     pip install flask-sqlalchemy
 
+##Banco de dados Postgres
+    pip install psycopg2-binary
+
 
 ## Instruções básicas para usar o git e github ##
 
