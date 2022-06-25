@@ -1,8 +1,12 @@
 from unicodedata import category
 from flask import Blueprint, render_template, request, redirect, flash, jsonify, url_for, abort
-from flask_login import login_required, current_user 
+from flask_login import login_required, current_user
+
+#from models.tables import Estabelecimento 
 from .models import Note
 from .models import Items
+from .models import Estabelecimentos
+
 
 from . import db
 import json
@@ -23,6 +27,7 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 #@login_required
 def home():
+    
     if request.method == 'POST':
         note = request.form.get('note')
 
@@ -57,7 +62,9 @@ def teste():
 
 @views.route('/form', methods=['GET', 'POST'])
 def form():
+    mercado = Estabelecimentos.query.all()
     if request.method == 'POST':
+        estabelecimento_id = request.form.get('estabelecimento_id')
         tipo_item = request.form.get('tipo_item')
         nome_item = request.form.get('nome_item')
         marca = request.form.get('marca_item')
@@ -77,10 +84,10 @@ def form():
 
         # Criar as validações dos inputs aqui
 
-        new_item = Items(tipo_item= tipo_item, nome_item=nome_item, 
+        new_item = Items( tipo_item=tipo_item, nome_item=nome_item, 
         marca_item=marca, volume_tipo = volume_tipo,
         volume= volume,  qtd_maxima=qtd_maxima, valor=valor,foto=namefoto,
-        data_fim_promocao=data_fim_promocao
+        data_fim_promocao=data_fim_promocao, estabelecimento_id=estabelecimento_id
         )
 
 
@@ -90,7 +97,7 @@ def form():
         return redirect(url_for('views.home'))
     #else:
         #flash('Erro ao salvar o produto', category='error')
-    return render_template('form.html', user=current_user)
+    return render_template('form.html', mercado=mercado, user=current_user)
 
 #Googlemaps
 class Comercio:
@@ -111,16 +118,22 @@ comercios_by_key = {comercio.key: comercio for comercio in comercios}
 
 @views.route('/mercadoa' ) #endpoints
 def mercadoa ():
-    dados_items = Items.query.all()
-    return render_template("mercadoa.html", ofertas=dados_items, comercios=comercios, user=current_user)
+    mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==1)
+
+    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==1)
+    return render_template("mercadoa.html", mercado=mercado , ofertas=dados_items, comercios=comercios, user=current_user)
 
 @views.route ( '/mercadob' )
 def  mercadob ():
-    return  render_template ( "mercadob.html" ,comercios=comercios,  user = current_user  )
+    return  render_template ( "mercadob.html",comercios=comercios,  user = current_user  )
 
 @views.route( '/mercadoc' )
 def  mercado ():
-    return  render_template ( "mercadoc.html" , user = current_user )
+     mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==3)
+
+     dados_items = db.session.query(Items).filter(Items.estabelecimento_id==3)
+
+     return  render_template ( "mercadoc.html", mercado=mercado, ofertas=dados_items, user = current_user )
 
 #GoogleMaps
 @views.route("/<comercio_code>")

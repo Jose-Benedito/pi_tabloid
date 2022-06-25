@@ -2,6 +2,7 @@ from unicodedata import category
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from sqlalchemy import null
 from .models import User
+from .models import Estabelecimentos
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user 
@@ -63,6 +64,10 @@ def sign_up():
             # add user to database
             new_user = User(email=email, nome_mercado=nome_mercado, password=generate_password_hash(password1,  method='sha256'))
             db.session.add(new_user)
+            db.session.commit()
+
+            comercio = Estabelecimentos(nome=nome_mercado)
+            db.session.add(comercio)
             db.session.commit()
             #login_user(user, remember=True)
             flash('conta criado com sucesso!', category='success')
