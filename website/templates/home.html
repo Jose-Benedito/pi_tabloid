@@ -13,27 +13,29 @@
     
     <title>{% block title %}Home{% endblock %}</title>
 </head>
+
 <body class="home">
     <div class=" preço-ideal">
     <h2>O PREÇO IDEAL É AQUI!!
-    <img class="text-figure" src="{{ url_for('static', filename='image/carrinho.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+    <img class="text-figure" src="{{ url_for('static', filename='image/carrinho.png')}}" class="figure-img img-fluid rounded" alt="ícone de carrinho">
+        
+    <audio class="autoplay-ace" controls="controls">
+    <source src="{{ url_for('static', filename='audio/audio_beth.mpeg')}}" type="audio/mpeg" />
+    </audio>
 </div></h2> 
     
     <div class="text-tabloide">
     <h5>tabloidedigital.com.br</h5>    
 </div>  
     
-    
-    
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button 
     class="navbar-toggler" 
     type="button" 
     data-toggle="collapse" 
     data-target="#navbar"
     >
-        <span class="navbar-toggler-icon"></span>
+     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
@@ -41,6 +43,7 @@
             <a class="nav-item nav-link" id="admin" href="/">Administrativo</a>
             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
             <a class="nav-item nav-link" id="form" href="/form">Formulário</a>
+            
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Mercados
@@ -51,6 +54,8 @@
                   <a class="dropdown-item" href="/mercadoc">Mercado C</a>
                 </div>
                 </div>
+               
+               
             
             {% else %}
             <a class="nav-item nav-link" id="home" href="/">Home</a>
@@ -67,6 +72,7 @@
                   <a class="dropdown-item" href="/mercadoc">Mercado C</a>
                 </div>
                 </div>
+          
             {% endif %}
         </div>
     </div>
@@ -97,20 +103,16 @@
  {% endwith %}
 
   <div class="row">   
-
     <div class="col-md-10 col-sm-8">
         {{ dados }}
-        
-        <figure>
-        <div id="ladoalado"></div><img class="figure-etiqueta" src="{{ url_for('static', filename='image/promoçao.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." ><img class="figure-etiqueta2" src="{{ url_for('static', filename='image/promoçao2.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." >
-               
-         <img class="figure" src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-        </figure>
     </div>
 </div>
-    
-    
-<div class=" rodape"> 
+
+<div class="logo">
+<img class="logo"src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="logo do site com o nome promoção ideal">
+</div>
+
+<div class="rodape"> 
     <div class="rede-social ">
         <ul>
             <h6><ol>Institucional</ol></h6>
@@ -130,21 +132,25 @@
     </div>
     <div class="rede-social">  
         <ul>  
-             <h6><ol>Siga o tabloide</ol></h6>
-        </ul>     
-    </div> 
+             <h6><ol>Siga o tabloide<ol></h6>
+             <div id="ladoalado">
+             <img class="facebook"src="{{ url_for('static', filename='image/facebook.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do facebbok" >
+             <img class="whats" src="{{ url_for('static', filename='image/whats.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do whatssap" >
+            </div>
+        </ul>  
+
+    </div>
+    
     <div class="rede-social">    
         <ul>  
             <h4<ol>Acessibilidade</ol></h4>
-            
-            <img  src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="A generic square placeholder image with rounded corners in a figure." >
+            <img  src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ícone de acessibilidade" >
         
         </ul>  
     </div> 
 </div>
 
-
-    <!--fontawesome-->
+     <!--fontawesome-->
     <script src="https://kit.fontawesome.com/cdd0c2c5dc.js" crossorigin="anonymous"></script>
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
