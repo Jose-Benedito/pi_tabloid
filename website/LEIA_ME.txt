@@ -24,3 +24,10 @@
     git push origin master (ou main)// envia para o projeto original
 
     git pull // atualizar o projeto a partir do remoto
+
+# CORREÇÃO DE ERROS PARA O DEPLOY NA HEROKU
+com relação ao blivet-gui 
+
+pip install opencv-contrib-python
+
+pip install opencv-python
