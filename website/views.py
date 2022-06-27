@@ -72,11 +72,11 @@ def form():
         volume = request.form.get('volume')
         qtd_maxima = request.form.get('qtd_maxima')
         valor = request.form.get('valor')
-    
+        
         file = request.files['foto']
         namefoto = file.filename
         
-
+        
         savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
         file.save(savePath)
 
@@ -94,7 +94,7 @@ def form():
         db.session.add(new_item)
         db.session.commit()
         flash('Produto salvo com sucesso', category='success')
-        return redirect(url_for('views.home'))
+        return redirect(url_for('views.form'))
     #else:
         #flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', mercado=mercado, user=current_user)
