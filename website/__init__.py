@@ -16,7 +16,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'grhteyeuwhhs fgdhjajakuww'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
  #Postgres
-   # app.config['SQLALCHEMY_DATABASE_URI']=f'postgresql://postgres:{PASSWORD}@localhost/{DB_POSTGRES}'
+    app.config['SQLALCHEMY_DATABASE_URI']=f'postgresql://postgres:{PASSWORD}@localhost/{DB_POSTGRES}'
     db.init_app(app)
 
 
@@ -42,7 +42,7 @@ def create_app():
         
     return app
 def create_database(app):
-    #db.create_all(app=app)
+    db.create_all(app=app)
     if not path.exists('website/' + DB_NAME):
        db.create_all(app=app)
        print('Created Database')
