@@ -147,12 +147,5 @@ def show_comercio(comercio_code):
     else:
         abort(404)
 
-@views.route('/upload', methods=['POST'])
-def upload():
-    if request.method == 'POST': 
-        file = request.files['imagem']
-        savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
-        file.save(savePath)
-        flash('Upload Efetuado Com Sucesso', category='success')
-    return render_template ( "upload.html" , user = current_user )
+
 

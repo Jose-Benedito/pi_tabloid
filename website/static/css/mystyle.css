@@ -68,7 +68,7 @@ body{
     display: inline-block;
     align-items: justify;
     width: 13rem;
-    height: 22rem;
+    height: 25rem;
     border-bottom: 2px solid #333;
     
     border-bottom: 2px solid rgb#333;
@@ -80,7 +80,7 @@ body{
     
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    line-height: 10px;
+    line-height: 22px;
 
 }
 
