@@ -125,7 +125,10 @@ def mercadoa ():
 
 @views.route ( '/mercadob' )
 def  mercadob ():
-    return  render_template ( "mercadob.html",comercios=comercios,  user = current_user  )
+    mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==2)
+
+    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==2)
+    return  render_template ( "mercadob.html",comercios=comercios,  ofertas=dados_items,  user = current_user  )
 
 @views.route( '/mercadoc' )
 def  mercado ():
