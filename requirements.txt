@@ -101,8 +101,7 @@ systemd-python==234
 terminal==0.4.0
 tinycss2==1.0.2
 tldextract==2.2.1
-ubuntu-advantage-tools==27.8
-ubuntu-drivers-common==0.0.0
+
 ufw==0.36
 Unidecode==1.1.1
 urllib3==1.25.8
