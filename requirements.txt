@@ -78,7 +78,7 @@ pyRFC3339==1.1
 
 
 
-python-xapp==2.2.1
+
 python-xlib==0.23
 pyttsx3==2.90
 pytz==2019.3
