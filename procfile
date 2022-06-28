@@ -1,1 +1,1 @@
-web:gunicorn app:main
+web:gunicorn -b:7257 main:app
