@@ -60,7 +60,7 @@ def admin():
 def teste():
     return render_template("cadastro.html", user=current_user)
 
-@views.route('/form', methods=['POST'])
+@views.route('/form', methods=['GET','POST'])
 def form():
     mercado = Estabelecimentos.query.all()
     if request.method == 'POST':
