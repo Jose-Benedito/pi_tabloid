@@ -11,7 +11,7 @@ colorama==0.4.3
 
 configobj==5.0.6
 cryptography==2.8
-cupshelpers==1.0
+
 dbus-python==1.2.16
 defer==1.0.6
 distlib==0.3.0
@@ -52,7 +52,7 @@ onboard==1.4.1
 opencv-contrib-python==4.6.0.66
 opencv-python==4.6.0.66
 packaging==20.3
-PAM==0.4.2
+
 
 pexpect==4.6.0
 Pillow==7.0.0
