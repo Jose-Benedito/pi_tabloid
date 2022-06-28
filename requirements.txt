@@ -76,7 +76,7 @@ pyperclip==1.8.2
 PyQt5==5.14.1
 pyRFC3339==1.1
 
-python-debian===0.1.36ubuntu1
+
 python-magic==0.4.16
 python-xapp==2.2.1
 python-xlib==0.23
