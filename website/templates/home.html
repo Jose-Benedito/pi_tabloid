@@ -16,15 +16,14 @@
 
 <body class="home">
     <div class=" preço-ideal">
-    <h2>O PREÇO IDEAL É AQUI!!
+    <h2>O PREÇO IDEAL É AQUI!!</h2>
     <img class="text-figure" src="{{ url_for('static', filename='image/carrinho.png')}}" class="figure-img img-fluid rounded" alt="ícone de carrinho">
+    </div>
         
-   
-</div></h2> 
-    
-    <div class="text-tabloide">
-    <h5>tabloidedigital.com.br</h5>    
-</div>  
+        <div class="text-tabloide">
+        <h5>tabloidedigital.com.br</h5> 
+        </div>   
+    </div>  
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button 
@@ -101,51 +100,50 @@
  {% endwith %}
 
   <div class="row">   
-    <div class="col-md-10 col-sm-8">
-        {{ dados }}
-    </div>
-</div>
-
-<div class="logo">
-<img class="logo"src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="logo do site com o nome promoção ideal">
-</div>
-
-<div class="rodape"> 
-    <div class="rede-social ">
-        <ul>
-            <h6><ol>Institucional</ol></h6>
-            <ol>Sobre tabloide</ol>
-            <ol>Mapa do site</ol>
-            <ol>Politica de privacidade</ol>
-        </ul>
-    </div>
-    <div class="rede-social">
-        <ul>  
-             <h6><ol>Atendimento ao cliente</ol></h6>
-             <ol>Oferta dia</ol>
-             <ol>Promoções semanais</ol>
-             <ol>Como comprar</ol>
-            
-        </ul>       
-    </div>
-    <div class="rede-social">  
-        <ul>  
-             <h6><ol>Siga o tabloide<ol></h6>
-             <div id="ladoalado">
-             <img class="facebook"src="{{ url_for('static', filename='image/facebook.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do facebbok" >
-             <img class="whats" src="{{ url_for('static', filename='image/whats.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do whatssap" >
-            </div>
-        </ul>  
-
-    </div>
+    <div class=" col-lg-12 col-md-10 col-sm-4">
     
-    <div class="rede-social">    
-        <ul>  
-            <h4<ol>Acessibilidade</ol></h4>
-            <img  src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ícone de acessibilidade" >
-        
-        </ul>  
-    </div> 
+        <div class="logoIcon">
+            <img class="logo"src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="logo do site com o nome promoção ideal">
+        </div>
+
+        <div class="rodape"> 
+            <div class="rede-social ">
+                <ul>
+                    <h6><ol>Institucional</ol></h6>
+                    <ol>Sobre tabloide</ol>
+                    <ol>Mapa do site</ol>
+                    <ol>Politica de privacidade</ol>
+                </ul>
+            </div>
+            <div class="rede-social">
+                <ul>  
+                    <h6><ol>Atendimento ao cliente</ol></h6>
+                    <ol>Oferta dia</ol>
+                    <ol>Promoções semanais</ol>
+                    <ol>Como comprar</ol>
+                    
+                </ul>       
+            </div>
+            <div class="rede-social">  
+                <ul>  
+                    <h6><ol>Siga o tabloide<ol></h6>
+                    <div id="ladoalado">
+                    <img class="facebook"src="{{ url_for('static', filename='image/facebook.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do facebbok" >
+                    <img class="whats" src="{{ url_for('static', filename='image/whats.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do whatssap" >
+                    </div>
+                </ul>  
+
+            </div>
+            
+            <div class="rede-social">    
+                <ul>  
+                    <h4<ol>Acessibilidade</ol></h4>
+                    <img  src="{{ url_for('static', filename='image/acessibilidade.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ícone de acessibilidade" >
+                
+                </ul>  
+            </div> 
+        </div>
+  </div>
 </div>
 
      <!--fontawesome-->
