@@ -5,29 +5,30 @@
 <a href="/">
 <button class="btn btn-success preview" type="button" >Preview/Home</button>
 </a>
+<h3 align="Center">Formulário</h3>
 <form action="" method="POST" enctype="multipart/form-data">
-    <h3 align="Center">Formulário</h3>
 
-    <div class="dropdown show">
+    
+    <div class="form-row">
         <div class="form-group">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-6 ">
                 <label for="mercado">Estabelecimento:</label>
 
                     {% for result in mercado %}
                     
-                    <input type="checkbox" value="{{ result.id }}" name ="estabelecimento_id">{{ result.nome }}
+                    <input type="checkbox" id="estabelecimento" value="{{ result.id }}" name ="estabelecimento_id">{{ result.nome }}
 
                     {% endfor %}
 
             </div>
-
         </div>
-
+        
+      
         <div class="form-group">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-6 ">
                 <label for="tipo_item">Tipo do produto:</label>
                 <select class="form-select" name="tipo_item" id="tipo_item" aria-label="Default select example">
-                    <option value="Selecione o tipo do produto">Selecione o tipo do produto</option>
+                    <option value="">Selecione o tipo do produto</option>
                     <option value="Açougue">Açougue</option>
                     <option value="Frios e laticinios">Frios e laticínios</option>
                     <option value="Adega e bebidas">Adega e bebidas</option>
@@ -42,55 +43,44 @@
             </div>
     </div>
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 ">
       <label for="nome_item">Nome do produto:</label>
       <input type="nome_item" class="form-control" id="nome_item" name="nome_item" placeholder="escreva o nome do produto">
         </div>
     </div>
 
 
-<!--
-    <script type="text/javascript" language="javascript">
-        function valida_form (){
-        if(document.getElementById("nome_item").value == ""){
-        alert('Por favor, preencha o campo nome do pproduto!');
-        document.getElementById("nome_item").focus();
-        return false
-        }
-        }
-    </script> -->
-
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 ">
             <label for="marca_item">Marca:</label>
             <input type="marca_item" class="form-control" id="marca_item" name="marca_item" placeholder="escreva o nome da marca">
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
-            <label for="volume_tipo">Tipo da quantidade (g, kg, ml, l):</label>
+        <div class="col-md-6 ">
+            <label for="volume_tipo">Peso:</label>
             <input type="volume_tipo" class="form-control" id="volume_tipo" name="volume_tipo" placeholder="escreva a quantidade">
 
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 ">
         <label for="volume">Quantidade:</label>
         <input type="volume" class="form-control" id="volume" name="volume" placeholder="escreva a quantidade">
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
-        <label for="qtd_maxima">Quantidade máxima:</label>
+        <div class="col-md-6 ">
+        <label for="qtd_maxima">Qtde máxima:</label>
         <input type="qtd_maxima" class="form-control" id="qtd_maxima" name="qtd_maxima" placeholder="escreva a quantidade">
         </div>
     </div>
 
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 ">
             <label for="valor">Valor:</label>
             <input type="valor" class="form-control" id="valor" name="valor" placeholder="escreva o valor do produto">
 
@@ -98,7 +88,7 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 ">
 
             <label for="data-final-promo">Arquivo:</label>
             <input id="foto" type="file" class="form-control"  name="foto">
@@ -106,13 +96,14 @@
         </div>
 
     <div class="form-group">
-        <div class="col-md-6 offset-md-3">
-            <label for="data_fim_promocao">Data final da promoção:</label>
+        <div class="col-md-6 ">
+            <label for="data_fim_promocao">final da promoção:</label>
             <input id="data_fim_promocao" type="data_fim_promocao" class="form-control" name="data_fim_promocao">
         </div>
     </div>
+</div>
 
-    <div class="col-md-6 offset-md-3 cadastrar" div id="cadastrar">
+    <div id="cadastrar">
         <button type="submit" class="btn btn-primary" onclick="return valida_form()">Cadastrar produto</button>
     </div>
 

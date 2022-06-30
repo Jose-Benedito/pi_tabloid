@@ -2,7 +2,11 @@
 
 function valida_form (){
 
-  
+    if(document.getElementById("estabelecimento").value == ""){
+        alert('Por favor, marque o estabelecimento');
+        document.getElementById("estabelecimento").focus();
+        return false;
+    }
     if(document.getElementById("tipo_item").value == ""){
         alert('Por favor, preencha o campo tipo do item');
         document.getElementById("tipo_item").focus();
