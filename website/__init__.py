@@ -15,8 +15,8 @@ HOST = 'ec2-18-204-142-254.compute-1.amazonaws.com'
 def create_app():
     app = Flask(__name__)
  #Sqlite configuração
-    app.config['SECRET_KEY'] = 'grhteyeuwhhs fgdhjajakuww'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+  #  app.config['SECRET_KEY'] = 'grhteyeuwhhs fgdhjajakuww'
+  #  app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
  #Postgres
     app.config['SQLALCHEMY_DATABASE_URI']=f'postgresql://{USER}:{PASSWORD}@{HOST}:5432/{DB_POSTGRES}'
     db.init_app(app)
@@ -45,8 +45,8 @@ def create_app():
     return app
 def create_database(app):
     db.create_all(app=app)
-    if not path.exists('website/' + DB_NAME):
-       db.create_all(app=app)
-       print('Created Database')
+   # if not path.exists('website/' + DB_NAME):
+     #  db.create_all(app=app)
+     #  print('Created Database')
 
     
