@@ -1,23 +1,39 @@
 
-body{
+*{
     margin:0%;
+    padding: 0%;
+    
+}
+body, html{
+    height:100vh ;
+    width:100vw;
+    
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    
     
 }
 
  /* Logo do site */
 .logo{
-    display:inline;  
-    width: 90%;
+     
+    position: absolute; 
+    width: 50%;
     height:50%;
-    margin-top: 200px;
+    margin-top: 100px;
+    
     
 }
  
 .logoIcon{
    margin-right: auto;
    margin-left: 20%;
-   height:600px;
-   width: 700px;
+   height:75%;
+   width: 50%;
+   
     
 }
 
@@ -152,6 +168,13 @@ ul li{
      margin-left: 60px; 
     
 }
+.maps-img{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items:flex-start;
+
+}
 
 
 form h3{
@@ -171,7 +194,7 @@ form{
 .rodape{
     background-color:#333;
     height:auto;
-    margin-top:80px;
+    margin-top: 20px;
     padding-top: 20px;
 }
 .rede-social{
@@ -179,7 +202,12 @@ form{
     text-align:left;
     color: aliceblue;
     font-family: 'sans-serif';
-    line-height: 20px;
+    line-height: 30px;
+    padding: 20px;
+    
+}
+.rede-social ul{
+    margin-right: 10px;
 }
 h6{
 color: yellow;
@@ -227,7 +255,7 @@ h4{
     margin-left:19%;
     width: 40px;
     height:40px;
-    margin-top: 1px;
+    margin-top: 10px;
     border: 3px solid green;
     float:left;
 }

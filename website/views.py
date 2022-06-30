@@ -136,7 +136,7 @@ def  mercado ():
 
      dados_items = db.session.query(Items).filter(Items.estabelecimento_id==3)
 
-     return  render_template ( "mercadoc.html", mercado=mercado, ofertas=dados_items, user = current_user )
+     return  render_template ( "mercadoc.html", comercios=comercios, ofertas=dados_items, user = current_user )
 
 #GoogleMaps
 @views.route("/<comercio_code>")

@@ -99,17 +99,17 @@
     {% endif %}
  {% endwith %}
 
-  <div class="row">   
-    <div class=" col-lg-12 col-md-10 col-sm-4">
+     
+ <main>   
     
         <div class="logoIcon">
             <img class="logo"src="{{ url_for('static', filename='image/logo.png')}}" class="figure-img img-fluid rounded" alt="logo do site com o nome promoção ideal">
         </div>
-
+    
         <div class="rodape"> 
             <div class="rede-social ">
                 <ul>
-                    <h6><ol>Institucional</ol></h6>
+                    <h6>Institucional</h6>
                     <ol>Sobre tabloide</ol>
                     <ol>Mapa do site</ol>
                     <ol>Politica de privacidade</ol>
@@ -117,7 +117,7 @@
             </div>
             <div class="rede-social">
                 <ul>  
-                    <h6><ol>Atendimento ao cliente</ol></h6>
+                    <h6>Atendimento ao cliente</h6>
                     <ol>Oferta dia</ol>
                     <ol>Promoções semanais</ol>
                     <ol>Como comprar</ol>
@@ -126,11 +126,11 @@
             </div>
             <div class="rede-social">  
                 <ul>  
-                    <h6><ol>Siga o tabloide<ol></h6>
-                    <div id="ladoalado">
-                    <img class="facebook"src="{{ url_for('static', filename='image/facebook.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do facebbok" >
-                    <img class="whats" src="{{ url_for('static', filename='image/whats.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do whatssap" >
-                    </div>
+                    <h6>Siga o tabloide</h6>
+                    
+                    <img class="facebook-base"src="{{ url_for('static', filename='image/facebook.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do facebbok" >
+                    <img class="whats-base" src="{{ url_for('static', filename='image/whats.png')}}" class="figure-img img-fluid rounded  figure-acessibilidade" alt="ìcone do whatssap" >
+                    
                 </ul>  
 
             </div>
@@ -143,8 +143,9 @@
                 </ul>  
             </div> 
         </div>
-  </div>
-</div>
+
+ 
+</main>
 
      <!--fontawesome-->
     <script src="https://kit.fontawesome.com/cdd0c2c5dc.js" crossorigin="anonymous"></script>
@@ -154,7 +155,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
      <!--myScript-->
     <script type="text/javascript" scr="{{ url_for('static', filename='index.js')}}"></script>
-
 </body>
 </html>
 
