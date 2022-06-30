@@ -13,11 +13,12 @@
         <div class="form-group">
             <div class="col-md-6 ">
                 <label for="mercado">Estabelecimento:</label>
+            
 
                     {% for result in mercado %}
-                    
+            
                     <input type="checkbox" id="estabelecimento" value="{{ result.id }}" name ="estabelecimento_id">{{ result.nome }}
-
+                    <br>
                     {% endfor %}
 
             </div>
