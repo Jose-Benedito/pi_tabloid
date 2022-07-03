@@ -219,7 +219,11 @@ h4{
     text-align:right;
     
 } 
+h2{
 
+    text-align:center; 
+    padding: 15px;
+}
   
 .figure-acessibilidade{    
     display:block;
@@ -273,4 +277,7 @@ h4{
     display: block;
     text-align:center;
     
+}
+.jumbotron{
+    height: 500px;
 }

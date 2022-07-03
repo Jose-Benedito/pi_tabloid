@@ -1,0 +1,175 @@
+{% extends "base.html" %} {% block title %}Edição de produtos{% endblock %}
+
+{% block content %}
+
+<h2>Edição de itens</h2>
+
+<div class="container" >
+
+<div class="jumbotron">
+  
+                    
+       
+  
+  <table class="table table-striped table-sm">
+        <tr>
+          <th>Cód-comércio</th>
+          <th>Cód</th>
+          <th>item</th>
+          <th>Volume</th>
+          <th>Qte</th>
+          <th>Preço</th>
+          <th>Data fim da promoção</th>
+          <th>Ações</th>
+          
+      
+          
+          
+          
+        </tr>
+          
+        {% for result in mercado %}
+            <tr>
+              
+              <td>{{ result.estabelecimento_id }}</td>
+              <td>{{result.id }}</td>
+              <td>{{ result.nome_item}}</td>
+              <td>{{ result.volume }}</td>
+              <td>{{ result.qtd_maxima }}</td>
+              <td>{{ result.valor }}</td>
+              <td>{{ result.data_fim_promocao }}</td>
+            <!--<td>{{ result.foto }}</td>-->  
+
+               
+              
+            
+              
+               
+
+
+              <td>
+             <!-- Button trigger modal editar -->
+              <button type="button" class="btn btn-outline-primary "
+              data-toggle="modal" 
+              data-target="#editarModal{{result.id}}" 
+              data-whateverId="{{ result.id }}"
+              data-whateverNome="{{ result.nome_item }}"
+              data-whateveVolume="{{ result.volume }}"
+              data-whateverQtd="{{ result.qtd_maxima }}"
+            
+              data-whateverValor="{{ result.valor }}"
+              data-whateverDataFimP="{{ result.data_fim_promocao }}">
+              Atualizar
+            </button>
+            <button type="button" class="btn btn-outline-danger" ><a href="/delete/{{ result.id }}">Deletar</a></button>            
+        </td>
+    </tr>
+    {% endfor %} 
+                                   
+           
+                
+                  
+                  
+                  
+</table>
+
+  </div>
+
+
+<!--=====================================33333333========================================= -->
+{% for result in mercado %}
+<div class="modal fade" id="editarModal{{result.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{url_for('views.update') }}" method="POST"  enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Nome do Item:</label>
+            <input name="nome_item" type="text" class="form-control" id="nome_item" value="{{ result.nome_item }}" >
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Volume:</label>
+            <input name="volume" class="form-control" id="volume" value="{{ result.volume }}" >
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Quantidade:</label>
+            <input name="qtd_maxima" type="text" class="form-control" id="qtd" value="{{ result.qtd_maxima }}" >
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Valor:</label>
+            <input name="valor" type="text" class="form-control" id="valor" value="{{ result.valor }}">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Data Fim da promoção:</label>
+            <input name="data_fim_promocao" type="text" class="form-control" id="data_fim" value="{{ result.data_fim_promocao }}">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Foto do produto:</label>
+            <input name="foto" type="file" class="form-control" id="foto" value="{{ result.foto }}" required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Foto do produto:</label>
+
+          <img class="card-img-top" src="static/uploads/{{ result.foto }}" alt="foto do produto">
+          </div>             
+          <input name="id" type="hidden" id="id" value="{{ result.id }}">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary" >Editar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+</div>
+<!--=====================================33333333========================================= -->
+<script type="text/javascript" src="{{ url_for('static', filename='script/jquery.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   
+<script>
+$('#editarModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipientId = button.data('whateverId') 
+        var recipientNome = button.data('whateverNome')
+        var recipientVolume = button.data('whateverVolume') 
+        var recipientQtd = button.data('whateverQtd') 
+        var recipientValor = button.data('whateverValor') 
+        var recipientDataFimP = button.data('whateverDataFimP') 
+
+        var modal = $(this)
+        modal.find('.modal-title').text('Emprétimos: cód. ' + recipientId)
+        modal.find('.modal-body input').val(recipientId)
+        modal.find('#id').val(recipientId)
+        modal.find('#nome_item').val(recipientNome)
+        modal.find('#volume').val(recipientVolume)
+        modal.find('#qtd').val(recipientQtd)
+        modal.find('#valor').val(recipientValor)
+    
+        modal.find('#data_fim').val(recipientDataFimP)
+        
+       
+})
+
+
+
+</script>
+
+
+
+ 
+
+
+
+
+
+
+{% endblock %}

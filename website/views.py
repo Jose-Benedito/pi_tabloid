@@ -40,16 +40,15 @@ def home():
             flash('Note adicionado', category='success')
     return render_template("home.html", user=current_user)
 
-@views.route('/delete-note', methods=['POST'])
-def delete_note():
-    note = json.loads(request.data)
-    noteId = note['noteId']
-    note = Note.query.get(noteId)
-    if note:
-        if note.user_id == current_user.id:
-            db.session.delete(note)
-            db.session.commit()
-    return jsonify({})
+@views.route('/delete/<id>/', methods=['GET','POST'])
+def delete(id):
+    dados = Items.query.get(id)
+    db.session.delete(dados)
+    db.session.commit()
+    flash('Item deletado com sucesso', category='success')
+    return redirect(url_for('views.editar'))
+     
+
 
 @views.route('/admin')
 @login_required
@@ -94,10 +93,51 @@ def form():
         db.session.add(new_item)
         db.session.commit()
         flash('Produto salvo com sucesso', category='success')
-        return redirect(url_for('views.form'))
+        return redirect(url_for('views.editar'))
     #else:
         #flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', mercado=mercado, user=current_user)
+
+#Update de produtos
+@views.route('/update', methods=['GET','POST'])
+def update():
+    
+    if request.method == 'POST':
+        dados =Items.query.get(request.form.get('id'))
+        
+        
+        dados.nome_item = request.form['nome_item']
+        
+        
+        dados.volume = request.form['volume']
+        dados.qtd_maxima = request.form['qtd_maxima']
+        dados.valor = request.form['valor']
+        dados.data_fim_promocao = request.form['data_fim_promocao']
+        
+        file = request.files['foto']
+        if (file)== "":
+            flash('Escolha uma foto', category='error')
+        else:
+            dados.foto = file.filename
+        
+        savePath = os.path.join(UPLOAD_FOLDER, secure_filename(file.filename))
+        file.save(savePath)
+
+
+        # Criar as validações dos inputs aqui
+
+
+
+    
+        db.session.commit()
+        flash('Produto Editado com sucesso', category='success')
+        return redirect(url_for('views.editar'))
+    #else:
+        #flash('Erro ao salvar o produto', category='error')
+    return render_template('form.html', mercado=mercado, user=current_user)
+
+
+
 
 #Googlemaps
 class Comercio:
@@ -147,5 +187,13 @@ def show_comercio(comercio_code):
     else:
         abort(404)
 
+@views.route("/editar/<id>/")
+def editar(id):
+    dados = Items.query.get(id)
+    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==2)
+    
+    for result in dados:
+        mercado = result
 
+    return render_template('editar.html', mercado=dados_items, user = current_user)
 
