@@ -37,10 +37,13 @@ main{
     
 }
 
-.preview{
+.preview {
      margin-top: 50px;
+     
  }
-  
+.preview a{
+    color: aliceblue;
+}
  
 
  /* fundo das páginas */

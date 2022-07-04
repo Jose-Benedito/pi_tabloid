@@ -12,14 +12,10 @@
     <div class="form-row">
         <div class="form-group">
             <div class="col-md-6 ">
-                <label for="mercado">Estabelecimento:</label>
-            
+                <label for="mercado">Estabelecimento: {{ mercado.nome }}</label>
+            <input type="hidden" id="estabelecimento_id" name="estabelecimento_id" value="{{ mercado.id }}">
 
-                    {% for result in mercado %}
-            
-                    <input type="checkbox" id="estabelecimento"  value="{{ result.id }}" name ="estabelecimento_id">  {{ result.nome }}
-                    <br>
-                    {% endfor %}
+                
 
             </div>
         </div>

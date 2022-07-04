@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, redirect, flash, jsonify,
 from flask_login import login_required, current_user
 
 #from models.tables import Estabelecimento 
-from .models import Note
+from .models import User
 from .models import Items
 from .models import Estabelecimentos
 
@@ -27,17 +27,7 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 #@login_required
 def home():
-    
-    if request.method == 'POST':
-        note = request.form.get('note')
 
-        if len(note) < 1:
-            flash('Note está muito curto', category='error')
-        else:
-            new_note = Note(data = note, user_id=current_user.id)
-            db.session.add(new_note)
-            db.session.commit()
-            flash('Note adicionado', category='success')
     return render_template("home.html", user=current_user)
 
 @views.route('/delete/<id>/', methods=['GET','POST'])
@@ -46,22 +36,23 @@ def delete(id):
     db.session.delete(dados)
     db.session.commit()
     flash('Item deletado com sucesso', category='success')
-    return redirect(url_for('views.editar'))
+    return redirect(url_for('views.admin'))
      
 
 
 @views.route('/admin')
 @login_required
 def admin():
+     
     return render_template("admin.html", user=current_user)
 
 @views.route('/cadastro')
 def teste():
     return render_template("cadastro.html", user=current_user)
 
-@views.route('/form', methods=['GET','POST'])
-def form():
-    mercado = Estabelecimentos.query.all()
+@views.route('/form/<id>', methods=['GET','POST'])
+def form(id):
+    mercado = Estabelecimentos.query.get(id)
     if request.method == 'POST':
         estabelecimento_id = request.form.get('estabelecimento_id')
         tipo_item = request.form.get('tipo_item')
@@ -93,7 +84,7 @@ def form():
         db.session.add(new_item)
         db.session.commit()
         flash('Produto salvo com sucesso', category='success')
-        return redirect(url_for('views.editar'))
+        return redirect(url_for('views.admin'))
     #else:
         #flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', mercado=mercado, user=current_user)
@@ -107,7 +98,7 @@ def update():
         
         
         dados.nome_item = request.form['nome_item']
-        
+        dados.marca_item = request.form['marca_item']
         
         dados.volume = request.form['volume']
         dados.qtd_maxima = request.form['qtd_maxima']
@@ -131,7 +122,7 @@ def update():
     
         db.session.commit()
         flash('Produto Editado com sucesso', category='success')
-        return redirect(url_for('views.editar'))
+        return redirect(url_for('views.admin'))
     #else:
         #flash('Erro ao salvar o produto', category='error')
     return render_template('form.html', mercado=mercado, user=current_user)
@@ -158,23 +149,24 @@ comercios_by_key = {comercio.key: comercio for comercio in comercios}
 
 @views.route('/mercadoa' ) #endpoints
 def mercadoa ():
-    mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==1)
+    
+    mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==19)
 
-    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==1)
+    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==19)
     return render_template("mercadoa.html", mercado=mercado , ofertas=dados_items, comercios=comercios, user=current_user)
 
 @views.route ( '/mercadob' )
 def  mercadob ():
     mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==2)
 
-    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==2)
+    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==20)
     return  render_template ( "mercadob.html",comercios=comercios,  ofertas=dados_items,  user = current_user  )
 
 @views.route( '/mercadoc' )
 def  mercado ():
-     mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==3)
+     mercado = db.session.query(Estabelecimentos).filter(Estabelecimentos.id==21)
 
-     dados_items = db.session.query(Items).filter(Items.estabelecimento_id==3)
+     dados_items = db.session.query(Items).filter(Items.estabelecimento_id==21)
 
      return  render_template ( "mercadoc.html", comercios=comercios, ofertas=dados_items, user = current_user )
 
@@ -189,11 +181,11 @@ def show_comercio(comercio_code):
 
 @views.route("/editar/<id>/")
 def editar(id):
-    dados = Items.query.get(id)
-    dados_items = db.session.query(Items).filter(Items.estabelecimento_id==2)
+    
+    dados = db.session.query(Items).filter(Items.estabelecimento_id==id)
     
     for result in dados:
         mercado = result
 
-    return render_template('editar.html', mercado=dados_items, user = current_user)
+    return render_template('editar.html', mercado= dados, user = current_user)
 
